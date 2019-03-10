@@ -1,0 +1,50 @@
+<head>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <!--<link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet">-->
+    <title>Question 6: The Paradigm of Sadness</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<body>
+    <div class="container">
+        <h1>Question 6: The Paradigm of Sadness</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    { 1, 1, NULL, 14, NULL, 27 + 34}<br>
+                    WHO AM I?<br>
+                    <br>
+                    I2 anyone there?<br>
+                    W4o surv1v3d?<br>
+                    Any0ne else but you<br>
+                    0n a lonely ni6ht<br>
+                    Was a burning light<br>
+                    A hundr3d years, we'll be b0rn aga1n<br>
+                    <br>
+                    Credit must be given where credit is due. Never plagiarize this man’s work.
+                </p>
+            </div>
+        </div>
+        <input type="text" name="solution" id="userInp">
+        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+
+    </div>
+</body>
+
+<script>
+    $("#submit").click(() => {
+        $.ajax({
+            type: "POST",
+            url: "api/q6/" + btoa($("#userInp").val()),
+            success: function (o) {
+                if (o !== "wrong") {
+                    swal("Good job!").then(() => {
+                        window.location.href = o
+                    })
+                } else {
+                    swal("Try again!")
+                }
+            }
+        })
+    })
+</script>

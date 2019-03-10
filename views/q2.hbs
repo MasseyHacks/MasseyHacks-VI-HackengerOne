@@ -1,0 +1,36 @@
+<head>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <!--<link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet">-->
+    <title>Question 2: Homophones into an Acronym</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<body>
+    <div class="container">
+        <h1>Question 2: Homophones into an Acronym</h1>
+        <h4 style="text-align: center"><span>Aral, Aegean, Caspian<br>No Evil, The Light, You Later Alligator<br>ornucopia, onundrum, atapult<br></span>
+        </h4>
+        <img class="img-fluid" src="images/image8.png">
+        <br>
+        <input type="text" name="solution" id="userInp">
+        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+    </div>
+</body>
+
+<script>
+    $("#submit").click(() => {
+        $.ajax({
+            type: "POST",
+            url: "api/q2/" + btoa($("#userInp").val()),
+            success: function (o) {
+                if (o !== "wrong") {
+                    swal("Good job!").then(() => {
+                        window.location.href = o
+                    })
+                } else {
+                    swal("Try again!")
+                }
+            }
+        })
+    })
+</script>

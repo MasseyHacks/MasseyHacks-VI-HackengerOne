@@ -1,0 +1,57 @@
+<head>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <!--<link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet">-->
+    <title>Question 5: Unbalanced Humors</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<body>
+    <div class="container">
+        <h1>Question 5: Unbalanced Humors</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <code>
+                    temp = import(quotes.txt)<br>
+                    print(Temp.src)<br>
+                    <br>
+                    “Shakespeare, William. The Tragedy of Hamlet, Prince of Denmark”<br>
+                    <br>
+                    importText = temp.readLine(0)<br>
+                    print (importText)<br>
+                    <br>
+                    “Oh what a piece of work is man!”<br>
+
+                    importText2 = temp.readline(1)<br>
+                    print(importText2)<br>
+
+                    “How noble in reason,”<br>
+                    <br>
+                    importAnsText = Temp.readln(“2”)<br>
+                    print (importAnsText)<br>
+
+                </code>
+            </div>
+        </div>
+        <input type="text" name="solution" id="userInp">
+        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+
+    </div>
+</body>
+
+<script>
+    $("#submit").click(() => {
+        $.ajax({
+            type: "POST",
+            url: "api/q5/" + btoa($("#userInp").val()),
+            success: function (o) {
+                if (o !== "wrong") {
+                    swal("Good job!").then(() => {
+                        window.location.href = o
+                    })
+                } else {
+                    swal("Try again!")
+                }
+            }
+        })
+    })
+</script>
