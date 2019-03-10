@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express')
+const router = express.Router()
 const fs = require('fs')
 const CryptoJS = require('crypto-js')
 const questions = JSON.parse(fs.readFileSync('./questions.json', 'utf-8'))
-var base64 = require('base-64');
+const base64 = require('base-64')
 require('dotenv').load()
 
 router.post('/:q/:answer', function (req, res, next) {
