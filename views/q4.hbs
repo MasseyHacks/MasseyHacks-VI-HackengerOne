@@ -33,7 +33,7 @@
     $("#submit").click(() => {
         $.ajax({
             type: "POST",
-            url: "api/q4/" + btoa($("#userInp").val()),
+            url: "api" + window.location.pathname + '/' + btoa($("#userInp").val()),
             success: function (o) {
                 if (o !== "wrong") {
                     swal("Good job!").then(() => {

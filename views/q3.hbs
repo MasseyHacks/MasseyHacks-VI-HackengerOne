@@ -10,7 +10,7 @@
         <h1>Question 3: The Life of Student-Athlete</h1>
         <div class="row">
             <div class="col-md-8">
-                <p><span>In case you didn’t know, we MasseyHacks kids LOVE leg day! We’ll let you in on a little secret… We’re secretly preparing for the NBA draft! The NBA Draft Combine is known as one of the most physically demanding tests for an athlete. Karl, our star player and MVP, is preparing for the draft. As a STUDENT-ATHLETE, he recognizes the importance of balancing academics AND athletics! His mental/physical workout is shown below, with each entry representing one exercise followed by the number of repetitions. <br><br>Burpees: (height, in feet, of a regulation basketball hoop) x (number of noble gases) <br>Squats: (most recent release of python 2 without dots) x (number of teams in the NBA)<br>Box Jumps: (height, in inches, of the NBA combine vertical record)  x (7th prime number)<br>Deadlifts: (number of letters in @jlin7’s first name) x (number of credits to earn OSSD)<br><br>After completing all of those reps, Karl is tired. But he knows he knows he still has to put in his Cardio! Karl is a perfectionist and wants the sum of his daily reps and daily steps to be exactly 100 000. How many steps does he still have to take?</span>
+                <p><span>In case you didn’t know, we MasseyHacks kids LOVE leg day! We’ll let you in on a little secret… We’re secretly preparing for the NBA draft! The NBA Draft Combine is known as one of the most physically demanding tests for an athlete. Karl, our star player and MVP, is preparing for the draft. As a STUDENT-ATHLETE, he recognizes the importance of balancing academics AND athletics! His mental/physical workout is shown below, with each entry representing one exercise followed by the number of repetitions. <br><br>Burpees: (height, in feet, of a regulation basketball hoop) x (number of noble gases) <br>Squats: (<b>SECOND</b> most recent release of python 2 without dots) x (number of teams in the NBA)<br>Box Jumps: (height, in inches, of the NBA combine vertical record)  x (7th prime number)<br>Deadlifts: (number of letters in @jlin7’s first name) x (number of credits to earn OSSD)<br><br>After completing all of those reps, Karl is tired. But he knows he knows he still has to put in his Cardio! Karl is a perfectionist and wants the sum of his daily reps and daily steps to be exactly 100 000. How many steps does he still have to take?</span>
                 </p>
             </div>
             <div class="col-md-4">
@@ -27,7 +27,7 @@
     $("#submit").click(() => {
         $.ajax({
             type: "POST",
-            url: "api/q3/" + btoa($("#userInp").val()),
+            url: "api" + window.location.pathname + '/' + btoa($("#userInp").val()),
             success: function (o) {
                 if (o !== "wrong") {
                     swal("Good job!").then(() => {

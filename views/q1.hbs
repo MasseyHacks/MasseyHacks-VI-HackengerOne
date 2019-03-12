@@ -18,6 +18,7 @@
 
 <script>
     $("#submit").click(() => {
+        console.log(window.location.pathname)
         $.ajax({
             type: "POST",
             url: "api/q1/" + btoa($("#userInp").val()),
