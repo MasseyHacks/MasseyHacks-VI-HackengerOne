@@ -44,8 +44,31 @@
   },
   "q6": {
     "answers": [
-      "Hugo",
-      "Victor Hugo"
+      "hugo",
+      "victor hugo"
+    ]
+  },
+  "q7": {
+    "answers": [
+      "rest in peace uncle phil"
+    ]
+  },
+  "q8": {
+    "answers": [
+      "burgundy blue",
+      "bourgogne blue",
+      "blue burgundy",
+      "blue bourgogne"
+    ]
+  },
+  "q9": {
+    "answers": [
+      "baby shark"
+    ]
+  },
+  "q10": {
+    "answers": [
+      "sub 2 p3wds"
     ]
   }
 }

@@ -8,7 +8,7 @@ require('dotenv').load()
 
 router.post('/:q/:answer', function (req, res, next) {
     let answer = base64.decode(req.params.answer);
-    if (questions[req.params.q]['answers'].includes(answer)) {
+    if (questions[req.params.q]['answers'].includes(answer.toLowerCase())) {
         res.send(base64.encode(CryptoJS.AES.encrypt("/q" + (Number(req.params.q.split("q")[1]) + 1), process.env.SECRET)))
     } else {
         res.send("wrong")

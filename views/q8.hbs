@@ -1,0 +1,53 @@
+<head>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <!--<link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet">-->
+    <title>Question 8: Wine Wednesday</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<body>
+    <div class="container">
+        <h1>Question 8: Wine Wednesday</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-fluid" src="images/image10.png">
+                <p>
+                    The VIne produces GrapEs for wiNE, thus gRapEs are cool :)
+                </p>
+            </div>
+            <div class="col-md-6">
+                <code>
+                    “ke mgwmz vf ngtkbktc uhz pgi z2 ukmvey cmtu, zcykp ba tgrpcbvo jfu ih ijufpq yzmptf rntbwic. ham
+                    lgtgsxa bq gygmqkkgyix qv c nctdtg yzlt pmlpvqstg! Ivsqw.”
+                </code>
+                <br>
+                <br>
+                <code>
+                    “Gsv Uivmxs Kilermxv mznvw zugvi z Wzip Ivw kilwfxvh hlnv lu gsv gzhgrvhg drmv rm gsv dliow. Kzri
+                    gsrh kilermxv drgs z gbkv lu hgilmt xsvvhv gl xivzgv zm Zoorgvizgrev Lcbnlilm lu Xlolfih.”
+                </code>
+            </div>
+        </div>
+        <input type="text" name="solution" id="userInp">
+        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+
+    </div>
+</body>
+
+<script>
+    $("#submit").click(() => {
+        $.ajax({
+            type: "POST",
+            url: "api/q8/" + btoa($("#userInp").val()),
+            success: function (o) {
+                if (o !== "wrong") {
+                    swal("Good job!").then(() => {
+                        window.location.href = o
+                    })
+                } else {
+                    swal("Try again!")
+                }
+            }
+        })
+    })
+</script>

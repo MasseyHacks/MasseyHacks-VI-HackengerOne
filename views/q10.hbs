@@ -1,0 +1,47 @@
+<head>
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <!--<link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet">-->
+    <title>Question 10: Ain’t nothing but Garfield’s Favorite food</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<body>
+    <div class="container" style="align-items: center">
+        <h1>Question 10: Ain’t nothing but Garfield’s Favorite food</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <p style="text-align: center">
+                    QR codes: Locker 1425<br>
+                    Drew Barrymore<br>
+                    Talk<br>
+                    Dancing with a stranger<br>
+                    Headlines<br>
+                    wow<br>
+                    Look back at it<br>
+
+                </p>
+            </div>
+        </div>
+        <input type="text" name="solution" id="userInp">
+        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+
+    </div>
+</body>
+
+<script>
+    $("#submit").click(() => {
+        $.ajax({
+            type: "POST",
+            url: "api/q10/" + btoa($("#userInp").val()),
+            success: function (o) {
+                if (o !== "wrong") {
+                    swal("Good job!").then(() => {
+                        window.location.href = o
+                    })
+                } else {
+                    swal("Try again!")
+                }
+            }
+        })
+    })
+</script>
