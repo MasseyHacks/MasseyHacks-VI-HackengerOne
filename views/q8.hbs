@@ -50,4 +50,9 @@
             }
         })
     })
+    $("#userInp").keypress(function (e) {
+        if (e.which == 13) {
+            $("#submit").focus().click()
+        }
+    })
 </script>
