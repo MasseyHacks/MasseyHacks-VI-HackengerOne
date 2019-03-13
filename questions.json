@@ -32,28 +32,33 @@
     "hint": ""
   },
   "q4": {
+    "name": "Question 4: Bezos the DMOJ Master",
     "answers": [
       "25"
     ]
   },
   "q5": {
+    "name": "Question 5: Unbalanced Humors",
     "answers": [
       "how infinite in faculty",
       "how infinite in faculties"
     ]
   },
   "q6": {
+    "name": "Question 6: The Paradigm of Sadness",
     "answers": [
       "hugo",
       "victor hugo"
     ]
   },
   "q7": {
+    "name": "Question 7: Bezos the DMOJ Master Part 2",
     "answers": [
       "rest in peace uncle phil"
     ]
   },
   "q8": {
+    "name": "Question 8: Wine Wednesday",
     "answers": [
       "burgundy blue",
       "bourgogne blue",
@@ -62,13 +67,18 @@
     ]
   },
   "q9": {
+    "name": "Question 9: Name that Tune",
     "answers": [
       "baby shark"
     ]
   },
   "q10": {
+    "name": "Question 10: Ain’t nothing but Garfield’s Favorite food",
     "answers": [
       "sub 2 p3wds"
     ]
+  },
+  "q11": {
+    "name": "VICTORY!!"
   }
 }
