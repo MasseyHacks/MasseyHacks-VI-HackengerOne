@@ -22,4 +22,10 @@ router.post('/:q/:answer', function (req, res, next) {
     }
 })
 
+router.post('/winAuth', function (req, res, next) {
+    let code = base64.decode(req.body['code'])
+    let key = req.body['key']
+    res.send(CryptoJS.AES.decrypt(code, key).toString(CryptoJS.enc.Utf8))
+})
+
 module.exports = router
