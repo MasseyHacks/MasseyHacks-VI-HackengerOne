@@ -2,6 +2,7 @@
     font-family: Avenir Next;
     src: url("https://mh5.masseyhacks.ca/fonts/avenir.otf");
 }
+
 * {
     font-family: Avenir Next, sans-serif;
     text-align: center;
@@ -9,10 +10,6 @@
 
 a {
     color: #00B7FF;
-}
-
-body {
-
 }
 
 .question-pane {
@@ -41,4 +38,26 @@ body {
 
 .main-body {
     align-items: center;
+}
+
+.start-button {
+    border-radius: 20em;
+    width: 100%;
+    background: rgba(34, 37, 41, 0.8);
+    border: none;
+    outline: none;
+    color: white;
+    height: 3em;
+    transition: all 0.3s;
+}
+
+.start-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .start-button {
+        width: 70vw;
+    }
 }

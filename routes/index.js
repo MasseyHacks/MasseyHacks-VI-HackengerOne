@@ -8,7 +8,14 @@ const questions = JSON.parse(fs.readFileSync('./questions.json', 'utf-8'))
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render("q1")
+    res.render("splash")
+})
+
+router.get('/begin', function (req, res, next) {
+    res.render('q1', {
+        title: questions['q1']['name'],
+        code: base64.encode(CryptoJS.AES.encrypt("MH5HHOneWinner" + Math.floor(new Date() / 1000), process.env.SECRET))
+    })
 })
 
 router.get('/:q', function (req, res, next) {
