@@ -61,3 +61,34 @@ a {
         width: 70vw;
     }
 }
+
+.generic-button {
+    border-radius: 20em;
+    background: rgba(34, 37, 41, 0.8);
+    border: none;
+    outline: none;
+    color: white;
+    width: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 3em;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.generic-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.02);
+}
+
+input {
+    margin-top: 10px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(34, 37, 41, 0.8);
+}
+
+input:focus {
+    border-bottom: 2px solid rgb(226, 98, 93);
+}
