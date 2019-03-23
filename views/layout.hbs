@@ -11,6 +11,20 @@
             crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86188538-7"></script>
+<script>
+    window.dataLayer = window.dataLayer || []
+
+    function gtag() {
+        dataLayer.push(arguments)
+    }
+
+    gtag('js', new Date())
+
+    gtag('config', 'UA-86188538-7')
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
 <script src="javascripts/cool.js"></script>
 <script id="2d-fragment-shader" type="x-shader/x-fragment">// <![CDATA[
@@ -151,6 +165,7 @@ float snoise(vec3 v)
 
 </script>
 <canvas id="glscreen" style="position: fixed"></canvas>
+
 <body>
     <nav class="navbar navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="#"><b>hackenger</b>One</a>
