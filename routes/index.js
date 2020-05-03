@@ -24,8 +24,6 @@ router.get('/:q', function (req, res, next) {
     var decrypt = CryptoJS.AES.decrypt(base64.decode(req.params.q), process.env.SECRET).toString(CryptoJS.enc.Utf8)
     var selector = decrypt.split("/")[1]
 
-    let formData = new FormData();
-
     let reportData = {
         "timestamp": Date.now() / 1000,
         "namespace": "hackenger1",
@@ -33,6 +31,13 @@ router.get('/:q', function (req, res, next) {
         "state": "loaded"
     }
 
+    axios.post(process.env.STATSENGINE + "/reportInternal", {
+        info: base64.encode(CryptoJS.AES.encrypt(reportData.toString(), process.env.SECRET))
+    }, {
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
 
     res.render(selector, {
         title: questions[selector]['name'],

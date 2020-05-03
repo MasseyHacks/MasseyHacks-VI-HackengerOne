@@ -4,6 +4,7 @@ const fs = require('fs')
 const CryptoJS = require('crypto-js')
 const questions = JSON.parse(fs.readFileSync('./questions.json', 'utf-8'))
 const base64 = require('base-64')
+const axios = require('axios')
 require('dotenv').load()
 
 router.post('/:q/:answer', function (req, res, next) {
@@ -16,8 +17,36 @@ router.post('/:q/:answer', function (req, res, next) {
         var q = req.params.q
     }
     if (questions[q]['answers'].includes(answer.toLowerCase())) {
+        let reportData = {
+            "timestamp": Date.now() / 1000,
+            "namespace": "hackenger1",
+            "question": q,
+            "state": "correct"
+        }
+
+        axios.post(process.env.STATSENGINE + "/reportInternal", {
+            info: base64.encode(CryptoJS.AES.encrypt(reportData.toString(), process.env.SECRET))
+        }, {
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
         res.send(base64.encode(CryptoJS.AES.encrypt("/q" + (Number(q.split("q")[1]) + 1), process.env.SECRET)))
     } else {
+        let reportData = {
+            "timestamp": Date.now() / 1000,
+            "namespace": "hackenger1",
+            "question": q,
+            "state": "incorrect"
+        }
+
+        axios.post(process.env.STATSENGINE + "/reportInternal", {
+            info: base64.encode(CryptoJS.AES.encrypt(reportData.toString(), process.env.SECRET))
+        }, {
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
         res.send("wrong")
     }
 })
