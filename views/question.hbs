@@ -1,37 +1,29 @@
 <!--<head>-->
 <!--<link href="stylesheets/bootstrap.css" rel="stylesheet">-->
 <!--&lt;!&ndash;<link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet">&ndash;&gt;-->
-<!--<title>Question 3: The Life of Student-Athlete</title>-->
+<!--<title>Question 1: Intro</title>-->
 <!--</head>-->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>-->
 <body>
 <div class="container">
-    <h1>Question 3: COVID-19</h1>
-    <div class="row">
-        <div class="col-md-8">
-            <p>David and James are very busy with analyzing the presence of COVID-19 in bats! In their high-tech
-                research lab, they were able to bring together 19 bats, 9 of which were infected and 10 of which were
-                healthy. Since David is behind on his data homework, he can’t seem to figure out how many ways the bats
-                can be arranged in the computer’s perspective. (The computer can only tell if a bat is infected or
-                healthy)
-            </p>
-        </div>
-        <div class="col-md-4">
-            <img class="img-fluid" src="images/image3.png">
-        </div>
-    </div>
-
-    <input type="text" name="solution" id="userInp">
+    <h1>{{title}}</h1>
+    {{{questionHTML}}}
+    {{#each images}}
+        <img class="img-fluid" src="images/{{this}}">
+    {{/each}}
+    <br>
+    <input type="text" name="solution" id="userInp" placeholder="type your answer">
     <button type="button" class="generic-button" id="submit">Submit</button>
 </div>
 </body>
 
 <script>
     $("#submit").click(() => {
+        console.log(window.location.pathname)
         $.ajax({
             type: "POST",
-            url: "api" + window.location.pathname + '/' + btoa($("#userInp").val()),
+            url: "api/{{question}}/" + btoa($("#userInp").val()),
             success: function (o) {
                 if (o !== "wrong") {
                     swal("Good job!").then(() => {

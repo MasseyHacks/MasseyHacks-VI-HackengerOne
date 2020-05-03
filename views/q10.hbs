@@ -1,40 +1,9 @@
-<!--<head>-->
-<!--<link href="stylesheets/bootstrap.css" rel="stylesheet">-->
-<!--&lt;!&ndash;<link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet">&ndash;&gt;-->
-<!--<title>Question 10: Ain’t nothing but Garfield’s Favorite food</title>-->
-<!--</head>-->
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>-->
-<body>
-    <div class="container" style="align-items: center">
-        <h1>Question 10: Ain’t nothing but Garfield’s Favorite food</h1>
-        <img style="max-height: 60vh" class="img-fluid" src="images/1.png">
-        </div>
-        <input type="text" name="solution" id="userInp">
-        <button type="button" class="generic-button" id="submit">Submit</button>
+<div class="container">
+    <h1>Congratulations!</h1>
+    <p>You are the winner of HackengerOne</p>
 
-    </div>
-</body>
-
-<script>
-    $("#submit").click(() => {
-        $.ajax({
-            type: "POST",
-            url: "api" + window.location.pathname + '/' + btoa($("#userInp").val()),
-            success: function (o) {
-                if (o !== "wrong") {
-                    swal("Good job!").then(() => {
-                        window.location.href = o
-                    })
-                } else {
-                    swal("Try again!")
-                }
-            }
-        })
-    })
-    $("#userInp").keypress(function (e) {
-        if (e.which == 13) {
-            $("#submit").focus().click()
-        }
-    })
-</script>
+    <p>Please message <b>@James Xu (MasseyHacks)</b> on <a href="https://masseyhacks.slack.com">Slack</a> with the
+        following code immediately to claim your prize:
+        <code>{{code}}</code></p>
+    <p><b>NOTE:</b> this code is time-sensitive, so copy down the code and <b>DO NOT REFRESH THE PAGE</b></p>
+</div>

@@ -1,82 +1,54 @@
 {
   "q1": {
-    "name": "Question 1: Intro",
-    "question": "For our first act… please welcome the greatest comedians of the century… Monty ____",
-    "solution": "If this tidbit of common knowledge is unknown to you, a quick google search of “Monty” should give you the answer.",
     "answers": [
-      "Python",
-      "python"
-    ],
-    "hint": ""
+      "0",
+      "zero"
+    ]
   },
   "q2": {
-    "name": "Question 2: Homophones into an Acronym",
-    "question": "<span style='text-align: center'>Aral, Aegean, Caspian<br>No Evil, The Light, You Later Alligator<br>ornucopia, onundrum, atapult<br></span>",
-    "solution": "Homophones are words with the same pronunciation but different meanings/spellings. The items in Line 1 are all associated with “Sea”. The phrases in Line 2 can all be tied to “See”. The incomplete words in Line 3 are all missing the letter “C”. “Sea”, “See”, and “C” are homophones. After transforming the words into a single acronym, you get everybody’s favorite contest: CCC.",
     "answers": [
       "CCC",
       "ccc"
-    ],
-    "hint": "Explain what homophones and acronyms are and then pray they have half a brain."
+    ]
   },
   "q3": {
-    "name": "Question 3: The Life of Student-Athlete",
-    "images": [
-      "image12.png"
-    ],
-    "question": "<span>In case you didn’t know, we MasseyHacks kids LOVE leg day! We’ll let you in on a little secret… We’re secretly preparing for the NBA draft! The NBA Draft Combine is known as one of the most physically demanding tests for an athlete. Karl, our star player and MVP, is preparing for the draft. As a STUDENT-ATHLETE, he recognizes the importance of balancing academics AND athletics! His mental/physical workout is shown below, with each entry representing one exercise followed by the number of repetitions. <br><br>Burpees: (height, in feet, of a regulation basketball hoop) x (number of noble gases) <br>Squats: (most recent release of python 2 without dots) x (number of teams in the NBA)<br>Box Jumps: (height, in inches, of the NBA combine vertical record)  x (7th prime number)<br>Deadlifts: (number of letters in @jlin7’s first name) x (number of credits to earn OSSD)<br><br>After completing all of those reps, Karl is tired. But he knows he knows he still has to put in his Cardio! Karl is a perfectionist and wants the sum of his daily reps and daily steps to be exactly 100 000. How many steps does he still have to take?</span>",
-    "solution": "Search for any unknown facts. \n(10 x 6) + (2715 x 30) + (46 x 17) + (6 x 30) = 82472  \n100000 - 82472 = 17528. \n",
     "answers": [
-      "17528"
-    ],
-    "hint": ""
+      "92378"
+    ]
   },
   "q4": {
-    "name": "Question 4: Bezos the DMOJ Master",
     "answers": [
       "25"
     ]
   },
   "q5": {
-    "name": "Question 5: Unbalanced Humors",
     "answers": [
-      "how infinite in faculty",
-      "how infinite in faculties"
+      "who, i?"
     ]
   },
   "q6": {
-    "name": "Question 6: The Paradigm of Sadness",
     "answers": [
-      "hugo",
-      "victor hugo"
+      "parasite"
     ]
   },
   "q7": {
-    "name": "Question 7: Bezos the DMOJ Master Part 2",
     "answers": [
-      "rest in peace uncle phil"
+      "ecoo",
+      "ecoo-cs"
     ]
   },
   "q8": {
-    "name": "Question 8: Wine Wednesday",
     "answers": [
-      "burgundy blue",
-      "bourgogne blue",
-      "blue burgundy",
-      "blue bourgogne"
+      "atomic nucleus"
     ]
   },
   "q9": {
-    "name": "Question 9: Name that Tune",
     "answers": [
-      "zelda",
-      "legend of zelda",
-      "zelda theme",
-      "legend of zelda theme"
+      "gatsby",
+      "the great gatsby"
     ]
   },
   "q10": {
-    "name": "Question 10: Ain’t nothing but Garfield’s Favorite food",
     "answers": [
       "sub 2 p3wds"
     ]
