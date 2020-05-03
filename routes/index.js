@@ -14,6 +14,23 @@ router.get('/', function (req, res, next) {
 })
 
 router.get('/begin', function (req, res, next) {
+
+    let reportData = {
+        "timestamp": Date.now() / 1000,
+        "namespace": "hackenger1",
+        "question": "q1",
+        "state": "loaded"
+    }
+
+    axios.post(process.env.STATSENGINE + "/reportInternal", {
+        info: base64.encode(CryptoJS.AES.encrypt(reportData.toString(), process.env.SECRET)),
+        key: process.env.STATSKEY
+    }, {
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+
     res.render('q1', {
         title: questions['q1']['name'],
         code: base64.encode(CryptoJS.AES.encrypt("MH6HHOneWinner" + Math.floor(new Date() / 1000), process.env.SECRET))
@@ -32,7 +49,8 @@ router.get('/:q', function (req, res, next) {
     }
 
     axios.post(process.env.STATSENGINE + "/reportInternal", {
-        info: base64.encode(CryptoJS.AES.encrypt(reportData.toString(), process.env.SECRET))
+        info: base64.encode(CryptoJS.AES.encrypt(reportData.toString(), process.env.SECRET)),
+        key: process.env.STATSKEY
     }, {
         headers: {
             'content-type': 'application/json'
