@@ -5,7 +5,6 @@ var base64 = require('base-64')
 const fs = require('fs')
 const questions = JSON.parse(fs.readFileSync('./questions.json', 'utf-8'))
 const axios = require('axios')
-const FormData = require('form-data')
 
 
 /* GET home page. */
