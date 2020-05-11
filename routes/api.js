@@ -25,7 +25,7 @@ router.post('/:q/:answer', function (req, res, next) {
         }
 
         axios.post(process.env.STATSENGINE + "/reportInternal", {
-            info: base64.encode(CryptoJS.AES.encrypt(reportData.toString(), process.env.SECRET)),
+            info: reportData,
             key: process.env.STATSKEY
         }, {
             headers: {
@@ -42,7 +42,7 @@ router.post('/:q/:answer', function (req, res, next) {
         }
 
         axios.post(process.env.STATSENGINE + "/reportInternal", {
-            info: base64.encode(CryptoJS.AES.encrypt(reportData.toString(), process.env.SECRET)),
+            info: reportData,
             key: process.env.STATSKEY
         }, {
             headers: {
